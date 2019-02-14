@@ -1,35 +1,20 @@
 <template>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">Leaderboard</div>
-
-                    <div class="card-body">
-                        
-                            <table class="table table-striped">
-                                <thead>
-                                <tr>
-                                    <th>Rank</th>
-                                    <th>Name</th>
-                                    <th>Score</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr :class="{success: user.id == current}" v-for="(user, key) in sortedUsers">
-                                    <td>{{ ++key }}</td>
-                                    <td>{{ user.name }}</td>
-                                    <td>{{ user.score }}</td>
-                                </tr>
-                                </tbody>
-                            </table>
-
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Rank</th>
+            <th>Name</th>
+            <th>Score</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr :class="{success: user.id == current}" v-for="(user, key) in sortedUsers">
+            <td>{{ ++key }}</td>
+            <td>{{ user.name }}</td>
+            <td>{{ user.score }}</td>
+        </tr>
+        </tbody>
+    </table>
 </template>
 
 <script>
